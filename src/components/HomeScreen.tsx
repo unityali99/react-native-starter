@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: any) => {
   const drawer = useRef<DrawerLayoutAndroid>(null);
   const [drawerPosition, setDrawerPosition] = useState<'left' | 'right'>(
     'left',
@@ -48,6 +48,10 @@ const HomeScreen = () => {
         <Button
           title="Open drawer"
           onPress={() => drawer.current?.openDrawer()}
+        />
+        <Button
+          title="Go profile"
+          onPress={() => navigation.navigate('Profile')}
         />
       </View>
     </DrawerLayoutAndroid>
